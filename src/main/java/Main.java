@@ -1,9 +1,9 @@
 public class Main {
-    volatile static boolean tumbler = false;
+
 
     public static void main(String[] args) {
-        User user = new User("Пользователь");
-        Box box = new Box("Игрушка");
+        User user = new User("User");
+        Box box = new Box("Box");
         user.start();
         box.start();
 

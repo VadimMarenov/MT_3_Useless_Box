@@ -9,9 +9,9 @@ public class User extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < COUNT_OF_TOUCHING; i++) {
-            if (!Main.tumbler) {
-                System.out.println(Thread.currentThread().getName() + " включил тумблер");
-                Main.tumbler = true;
+            if (!Box.tumbler) {
+                System.out.println(Thread.currentThread().getName() + " turned on the tumbler");
+                Box.tumbler = true;
                 try {
                     Thread.sleep(USER_WAITING);
                 } catch (InterruptedException e) {

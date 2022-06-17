@@ -1,4 +1,5 @@
 public class Box extends Thread {
+    volatile static boolean tumbler = false;
     public Box(String name) {
         super(name);
     }
@@ -6,9 +7,9 @@ public class Box extends Thread {
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
-            if (Main.tumbler) {
-                Main.tumbler = false;
-                System.out.println(Thread.currentThread().getName() + " выключила тумблер");
+            if (tumbler) {
+                tumbler = false;
+                System.out.println(Thread.currentThread().getName() + " turned off the tumbler");
             }
         }
     }
